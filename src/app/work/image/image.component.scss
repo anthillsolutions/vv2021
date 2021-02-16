@@ -1,0 +1,55 @@
+.item {
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    img,
+    .flip {
+      width: 100%;
+      height: 100%;
+      display: block;
+      opacity: 1;
+      transition: ease-out 0.3s;
+    }
+
+    .normal {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .flip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: ease-out 0.3s;
+      background: white;
+      color: transparent;
+      display: grid;
+      align-items: center;
+      text-align: center;
+      font-size: 5.3rem;
+      line-height: 5.3rem;
+      font-weight: bold;
+      outline: none;
+      cursor: default;
+    }
+
+    &:hover {
+      img {
+        opacity: 0;
+        transition: ease-in 0.3s;
+      }
+
+      .flip {
+        opacity: 1;
+        color: rgb(16, 24, 32);
+        transition: ease-in 0.3s;
+        cursor: pointer;
+      }
+    }
+  }

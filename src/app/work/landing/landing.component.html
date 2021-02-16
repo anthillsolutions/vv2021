@@ -1,0 +1,37 @@
+<div class="as-container as-scroll">
+  <ul class="filters" #content>
+    <li>
+      <button class="as-btn as-ghost" [class.active]="(filter$ | async) === undefined" (click)="setFilter()">
+        All
+      </button>
+    </li>
+    <li *ngFor="let type of (strapiStore.types$ | async)">
+      <button class="as-btn as-ghost" [class.active]="(filter$ | async) === type.slug" (click)="setFilter(type.slug)">
+        {{ type.title }}
+      </button>
+    </li>
+  </ul>
+
+  <ng-container *ngIf="(strapiStore.assets$ | filterAsset:filter$ | async) as list">
+  <ng-container *ngIf="list.length; then contentTemplate; else noTemplate"></ng-container>
+  </ng-container>
+</div>
+
+<button class="as-btn as-dark as-round up" (click)="scrollTop()" *ngIf="goUp" [@upAnim]>
+  <img src="assets/icons/arrow-up.svg" alt="up">
+</button>
+
+<ng-template #contentTemplate>
+  <div class="content">
+    <div *ngFor="let asset of (strapiStore.assets$ | filterAsset:filter$ | async)" [class.tall]="asset.tall"
+      [class.large]="asset.large">
+      <app-image [asset]="asset"></app-image>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noTemplate>
+  <div class="no-content">
+    No content for this filter
+  </div>
+</ng-template>

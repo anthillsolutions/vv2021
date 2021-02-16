@@ -1,0 +1,14 @@
+html {
+  font-size: 10px;
+}
+
+.as-container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &.as-scroll {
+    overflow: auto;
+  }
+}

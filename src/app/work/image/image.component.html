@@ -1,0 +1,18 @@
+<div class="item">
+  <ng-container *ngTemplateOutlet="imageTemplate"></ng-container>
+  <ng-container *ngTemplateOutlet="captionTemplate"></ng-container>
+</div>
+
+<ng-template #imageTemplate>
+  <img [src]="preview" [alt]="asset?.asset?.alternativeText" class="preview">
+  <img [src]="imageUrl" [alt]="asset?.asset?.alternativeText" class="normal" laoding="lazy">
+</ng-template>
+
+<ng-template #captionTemplate>
+  <div class="flip">
+    <div>
+      <h2>{{ asset?.title }}</h2>
+      <p>{{ asset?.work?.title }}</p>
+    </div>
+  </div>
+</ng-template>

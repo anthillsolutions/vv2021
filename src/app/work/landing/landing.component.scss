@@ -1,0 +1,88 @@
+@use 'src/assets/scss/as/responsive' as *;
+
+.as-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.filters {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+  padding-top: 10.4rem;
+  padding-bottom: 4.8rem;
+
+  li {
+    margin-left: 2.4rem;
+
+    &:last-child {
+      margin-right: 2.4rem;
+      padding-right: 2.4rem;
+    }
+
+    button {
+      white-space: nowrap;
+      border-radius: 0 !important;
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.no-content {
+  display: grid;
+  align-items: center;
+  text-align: center;
+}
+
+.up {
+  display: none;
+}
+
+@include md {
+  .filters {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+
+    li {
+      margin: 0;
+      text-align: center;
+
+      &:last-child {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  .content {
+    grid-template-columns: 1fr 1fr;
+
+    .large {
+      grid-column: 1 / span 2;
+    }
+
+    .tall {
+      grid-row: span 2;
+    }
+  }
+
+  .up {
+    display: block;
+    position: absolute;
+    top: 5rem;
+    left: 49%;
+    width: 4rem;
+    height: 4rem;
+    z-index: 2;
+
+    img {
+      padding-top: 0.4rem;
+    }
+  }
+}

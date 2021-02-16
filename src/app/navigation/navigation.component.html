@@ -1,0 +1,39 @@
+<div class="header">
+  <a routerLink="/" class="link">
+    <img class="logo" alt="vv" title="Valentin Vitus" src="assets/png/sigle_noir_SERRE.png">
+  </a>
+  <div class="end">
+    <button class="as-btn as-ghost view-list" (click)="isOpen = true">
+      <img src="assets/icons/view-list.svg" alt="view">
+    </button>
+  </div>
+
+  <ng-container *ngTemplateOutlet="navigationTemplate"></ng-container>
+</div>
+
+<div class="menu" *ngIf="isOpen">
+  <a routerLink="/">
+    <img class="logo" alt="vv" title="Valentin Vitus" src="assets/png/sigle_noir_SERRE.png">
+  </a>
+  <div class="end">
+    <button class="as-btn as-ghost view-list" (click)="isOpen = false">
+      <img src="assets/icons/x.svg" alt="view">
+    </button>
+  </div>
+
+  <ng-container *ngTemplateOutlet="navigationTemplate"></ng-container>
+</div>
+
+<ng-template #navigationTemplate>
+  <ul class="nav">
+    <li>
+      <a routerLink="/work" routerLinkActive="active">Work</a>
+    </li>
+    <li>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+    </li>
+    <li>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </li>
+  </ul>
+</ng-template>

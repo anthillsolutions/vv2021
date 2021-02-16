@@ -1,0 +1,44 @@
+.as-btn,
+.as-btn-md,
+.as-btn-lg {
+  height: 3.2rem;
+  line-height: 3.2rem;
+  border: none;
+  border-radius: 0.3rem;
+  outline: none;
+  background: #f2f2fa;
+  cursor: pointer;
+
+  img {
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+
+  &.as-ghost {
+    background: transparent;
+  }
+
+  &.as-light {
+    background: #f2f2fa;
+  }
+
+  &.as-dark {
+    background: #4a4a4c;
+    color: white;
+  }
+
+  &.as-round {
+    border-radius: 50%;
+  }
+}
+
+.as-btn-lg {
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 0.5rem;
+
+  img {
+    height: 4rem;
+    width: 4rem;
+  }
+}

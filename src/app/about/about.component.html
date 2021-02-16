@@ -1,0 +1,4 @@
+<div class="as-container about" *ngIf="(activatedRoute.data | async) as data">
+  <div class="content" [innerHTML]="data.about?.description | markdown">
+  </div>
+</div>
